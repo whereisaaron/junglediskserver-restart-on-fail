@@ -21,3 +21,20 @@ if the client needs to be restarted or if the log file is missing.
 Aaron Roydhouse  
 aaron@roydhouse.com  
 Sep 2014
+
+Install
+-------
+
+Sample install steps are below. The script requires `test`, `date`, and `basename`. *You must inspect and configure the script yourself after each time you download it from this website before you use it.*
+
+```
+cd /etc/jungledisk
+wget https://raw.githubusercontent.com/whereisaaron/junglediskserver-restart-on-fail/master/junglediskserver-restart-on-fail.sh
+chmod 0700 junglediskserver-restart-on-fail.sh
+cronttab -e
+```
+
+Here is a sample cron entry to run daily at 6am. The test will still fail until the next back-up is run, so you probably should no run it more often then daily.
+```
+* 6 * * * /etc/jungledisk/junglediskserver-restart-on-fail.sh  #Restart Jungle Disk Server when stuck
+```
