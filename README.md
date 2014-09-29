@@ -31,7 +31,7 @@ Sample install steps are below. The script requires `test`, `date`, and `basenam
 cd /etc/jungledisk
 wget https://raw.githubusercontent.com/whereisaaron/junglediskserver-restart-on-fail/master/junglediskserver-restart-on-fail.sh
 chmod 0700 junglediskserver-restart-on-fail.sh
-cronttab -e
+crontab -e
 ```
 
 Here is a sample cron entry to run daily at 6am. The test will still fail until the next back-up is run, so you probably should no run it more often then daily.
