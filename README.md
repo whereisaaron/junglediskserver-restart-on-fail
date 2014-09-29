@@ -18,5 +18,6 @@ So I recommend you configure your schedule to run missed backups automatically.
 This script is designed to be used in the cron job, and only outputs to stdout/stderr
 if the client needs to be restarted or if the log file is missing.
 
-Aaron Roydhouse <aaron@roydhouse.com>
+Aaron Roydhouse  
+aaron@roydhouse.com  
 Sep 2014
