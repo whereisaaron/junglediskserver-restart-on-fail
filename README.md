@@ -38,3 +38,12 @@ Here is a sample cron entry to run daily at 6am. The test will still fail until 
 ```
 * 6 * * * /etc/jungledisk/junglediskserver-restart-on-fail.sh  #Restart Jungle Disk Server when stuck
 ```
+
+Monitoring
+----------
+
+To ensure your cron job is doing its job, you can monitor the file age yourself. If you use Nagios with the `nrpe` agent, you can use something like this command definition in your `nrpe.cfg` file (check the paths for your Linux distro, and that you have the `check_file_age` Nagios plugin installed).
+
+```
+command[check_jungledisk_logs]=/usr/lib/nagios/plugins/check_file_age -w 108000 -c 180000 -f /var/cache/jungledisk/server-cache/logs/backuplog.csv
+```
